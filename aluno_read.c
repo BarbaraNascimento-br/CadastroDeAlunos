@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include "aluno_read.h"
 #include "aluno.h"
 
@@ -57,7 +58,11 @@ int buscarAlunoPorId(int i){
     
 }
 
-int buscarPorNome(char n){
+int buscarPorNome(char n[]){
+
+    for(int i = 0; n[i] != '\0'; i++){
+        n[i] = toupper(n[i]);
+    }
      //Abrindo 
     FILE *arquivo = fopen("turma.bin", "rb");
 
@@ -81,7 +86,7 @@ int buscarPorNome(char n){
         }
     }
     //se não achou, vem para essa area 
-    printf("Aluno com Nome %d nao encontrado!\n", n);
+    printf("Aluno com Nome %s nao encontrado!\n", n);
     fclose(arquivo);
 
     return -1;

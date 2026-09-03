@@ -3,7 +3,7 @@
 
 #include "aluno.h"
 
-float mediaAluno(Aluno *aluno);
-int alunoAprovado(Aluno *aluno);
+float mediaAluno(const Aluno *aluno);
+const char *situacaoAluno(const Aluno *aluno);
 
 #endif

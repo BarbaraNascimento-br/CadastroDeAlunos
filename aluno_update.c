@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "aluno.h"
 
 int atualizarAluno(int id, int opcao) {

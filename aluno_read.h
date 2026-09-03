@@ -6,6 +6,7 @@
 
 void listarAlunos();
 int buscarAlunoPorId(int id);
+int buscarPorNome(char n[]);
 
 #endif
 

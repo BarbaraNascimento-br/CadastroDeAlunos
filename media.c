@@ -1,9 +1,9 @@
 #include <string.h>
 #include <stdlib.h>
-#include <aluno.h>
+#include "aluno.h"
 
 // Calcula a média das notas do aluno
-float mediaAluno(Aluno *aluno) {
+float mediaAluno(const Aluno *aluno) {
 
     // Verifica se o ponteiro para o aluno é nulo
     if (aluno == NULL) {
@@ -16,7 +16,7 @@ float mediaAluno(Aluno *aluno) {
     return media;
 }
 // Retorna a situação do aluno com base na média e no número de faltas
-const char *situacaoAluno(Aluno *aluno) {
+const char *situacaoAluno(const Aluno *aluno) {
 
     // Verifica se o aluno atingiu a média mínima
     // e se não ultrapassou o limite de faltas

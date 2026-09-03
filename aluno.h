@@ -12,6 +12,6 @@ typedef struct _aluno{
 }Aluno;
 
 void printAluno(const Aluno *aluno);
-Aluno *criarAluno(int id, char *nome, int matricula, float nota1, float nota2, unsigned faltas);
+Aluno *criarAluno(int id, char *nome, unsigned int matricula, float nota1, float nota2, unsigned faltas);
 
 #endif

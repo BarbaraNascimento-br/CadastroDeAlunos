@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include "aluno.h"
 #include "aluno_white.h"
 #include "aluno_read.h"
+#include "aluno_update.h"
+#include "aluno_delete.h"
+
+
+//
 
 int main() {
 
@@ -39,6 +45,7 @@ int main() {
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
+
         switch (opcao) {
 
             case 1:
@@ -56,8 +63,11 @@ int main() {
                     // Definindo valor ao id 
                     id =  i + 1;
 
+                    getchar();
+
                     //Definindo o nome do aluno i
-                    printf("Nome: "); fgets(nome, sizeof(nome), stdin);
+                    printf("Nome: "); 
+                    fgets(nome, sizeof(nome), stdin);
                     // Retirando o o "enter" no final do nome 
                     nome[strcspn(nome, "\n")] = '\0';
 
@@ -133,9 +143,9 @@ int main() {
                     buscarAlunoPorId(idInformado);
                 }else if (escolha == 2){
                     printf("Informe o nome do aluno:\n");
-                    scanf("%s", &nomeInformado);
-
-                    buscarPorNome(toupper(nomeInformado));
+                    fgets(nomeInformado, sizeof(nomeInformado), stdin);
+                    
+                    buscarPorNome(nomeInformado);
                 }else{
                     printf("Opção inválida");
                 }

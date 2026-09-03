@@ -15,8 +15,13 @@ Aluno *criarAluno(int id, char *nome, unsigned int matricula, float nota1, float
         return NULL;
     }
 
+    for (int i = 0; i < 40; i++){
+        nome[i] = toupper(nome[i]);
+    }
+    
+
     aluno->id = id;
-    strcpy(aluno->nome, toupper(nome));
+    strcpy(aluno->nome, nome);
     aluno->matricula = matricula;
     aluno->nota1 = nota1;
     aluno->nota2 = nota2;
